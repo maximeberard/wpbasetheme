@@ -24,6 +24,7 @@
         $url = $wp->request;
         $pageTitle = get_the_title(get_the_ID());
         $title = get_bloginfo('name').' - '.get_bloginfo('description');
+        $postName = $post->post_name;
 
         // if(get_field('meta_title')){
         //     $title = get_field('meta_title');
