@@ -25,17 +25,17 @@
         $pageTitle = get_the_title(get_the_ID());
         $title = get_bloginfo('name').' - '.get_bloginfo('description');
 
-        if(get_field('meta_title')){
-            $title = get_field('meta_title');
-        }
+        // if(get_field('meta_title')){
+        //     $title = get_field('meta_title');
+        // }
     ?>
     <title><?php echo $title; ?></title>
 
     <?php 
         $metaDescription = 'WPBaseTheme - SiteDescription';
-        if(get_field('meta_description')){
-            $metaDescription = get_field('meta_description');
-        }
+        // if(get_field('meta_description')){
+        //     $metaDescription = get_field('meta_description');
+        // }
     ?>
 
     <meta name="description" content="<?php echo $metaDescription; ?>">

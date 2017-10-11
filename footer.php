@@ -13,52 +13,6 @@
 </div>
 
 <footer id="footer">
-    <div class="container footer-container">
-        <div class="row">
-
-            <div class="col-sm-6 col-md-3 footer-col footer-desc">
-                <h3 class="footer-title">WPBaseTheme</h3>
-                <?php dynamic_sidebar('footer-description'); ?>
-            </div>
-            <div class="col-sm-6 col-md-3 footer-col footer-contact">
-                <h3 class="footer-title">Contact</h3>
-                <?php dynamic_sidebar('footer-contact'); ?>
-            </div>
-            <div class="col-sm-6 col-md-3 footer-col footer-newsletter">
-                <h3 class="footer-title footer-title-newsletter">Newsletter</h3>
-                
-            </div>
-            <div class="col-sm-6 col-md-3 footer-col footer-socials">
-                <h3 class="footer-title footer-title-socials"><?php _e('Follow us','theme-text-domain'); ?></h3>
-                <a class="social-link" href="http://www.instagram.com" target="_blank">
-                    <svg class="social-icon">
-                        <use xlink:href="#icon-instagram"></use>
-                    </svg>
-                </a>
-                <a class="social-link" href="http://www.facebook.com" target="_blank">
-                    <svg class="social-icon">
-                        <use xlink:href="#icon-facebook"></use>
-                    </svg>
-                </a>
-                <a class="social-link" href="http://www.twitter.com" target="_blank">
-                    <svg class="social-icon">
-                        <use xlink:href="#icon-twitter"></use>
-                    </svg>
-                </a>
-            </div>
-        </div>
-        
-    </div>
-
-    <div class="footer-credits-cont">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 footer-credits">
-                    © WPBaseTheme - <a href="#" class="footer-link"><?php _e('Legals','theme-text-domain') ?></a> - <?php _e('Development','theme-text-domain'); ?> : <a class="footer-link" href="http://www.url.com" target="_blank">Maxime Bérard</a>
-                </div>
-            </div>
-        </div>
-    </div>
     
 </footer>
 

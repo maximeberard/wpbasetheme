@@ -4,12 +4,12 @@ Custom Wordpress starting theme using `Twenty Sixteen Theme` and adapted from th
 
 * **Find and replace** every `WPBaseTheme` occurences over this folder using your own theme name, verify in:
     * Absolute paths in `bootstrap.js`
-    * Rename `http://www.url.com` with your site URL.
-* Launch `bower install` and `npm install` in your theme folder to install *NPM* and *Bower* vendor and launch *Gulp* tasks for the first time.
+* Rename `http://www.url.com` with your site URL.
 
 If you want to rename your theme, you will have to replace all `wpbasetheme` occurences in this folder with your new folder name.
-
 You can also change your site description, replacing `SiteDescription` by your own custom description or use WP site desc.
+
+* Launch `bower install` and `npm install` in your theme folder to install *NPM* and *Bower* vendor and launch *Gulp* tasks for the first time.
 
 We also created a LESS (`less/pages/page.less`) and a javascript file (`src/pages/page.js`) for this node-type.
 If you need others node-type, duplicate theses files and rename them.
