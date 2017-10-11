@@ -1,0 +1,27 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+
+
+<IfModule mod_headers.c>
+Header always set X-FRAME-OPTIONS "DENY"
+</IfModule>
+
+
+
+# <IfModule mod_headers.c>
+
+ # ExpiresByType image/jpeg "access plus 2592000 seconds"
+ # ExpiresByType image/png "access plus 2592000 seconds"
+# <FilesMatch "\\.(ico|jpe?g|png|gif|swf)$">
+# Header set Cache-Control "max-age=2592000, public"
+# </FilesMatch>
+# </IfModule>
