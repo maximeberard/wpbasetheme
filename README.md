@@ -1,11 +1,11 @@
 # WP Base Theme
 
-Custom Wordpress Base Theme using `Twenty Sixteen Theme` and adapted from the awesome [BaseTheme](https://github.com/roadiz/BaseTheme) made for [Roadiz CMS](http://www.roadiz.io).
+Custom Wordpress starting theme using `Twenty Sixteen Theme` and adapted from the awesome [BaseTheme](https://github.com/roadiz/BaseTheme) made for [Roadiz CMS](http://www.roadiz.io).
 
 * **Find and replace** every `WPBaseTheme` occurences over this folder using your own theme name, verify in:
     * Absolute paths in `bootstrap.js`
     * Rename `http://www.url.com` with your site URL.
-* Launch `make` in your theme folder to install *NPM* and *Bower* vendor and launch *Gulp* tasks for the first time.
+* Launch `bower install` and `npm install` in your theme folder to install *NPM* and *Bower* vendor and launch *Gulp* tasks for the first time.
 
 If you want to rename your theme, you will have to replace all `wpbasetheme` occurences in this folder with your new folder name.
 
@@ -42,13 +42,13 @@ be properly served over browser caches.
 * Install globally *NodeJS* - http://nodejs.org/
 * Install globally *Bower* - http://bower.io/
 * Install globally *gulp-cli* - https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
-* Launch `make` in your theme folder to install *NPM* and *Bower* vendor and launch *Gulp* tasks for the first time.
+* Launch `bower install` and `npm install` in your theme folder to install *NPM* and *Bower* vendor and launch *Gulp* tasks for the first time.
 
 Then you can launch *Gulp* in background to listen every file update: this command will
 generate development CSS file (with source-map and not-minified) and transpile your ES6 scripts.
 
 ```shell
-make watch
+gulp watch
 ```
 
 And when you need to prepare files for production: this command will generate production CSS
@@ -56,7 +56,7 @@ files (no source-map and minified) and will optimize *requireJS* dependence tree
 a single JS bundle in `build/` folder.
 
 ```shell
-make build
+gulp
 ```
 
 ### Versioning
@@ -75,22 +75,12 @@ you want to import plain CSS files.
 
 #### In development mode
 
-When you work with `make watch` running in background, *Gulp* will only compile your *LESS* files in `css/` folder 
+When you work with `gulp watch` running in background, *Gulp* will only compile your *LESS* files in `css/` folder 
 and transpile your ES6 javascript files into `dist/` folder. It won’t optimize nor uglify your JS. 
 
 #### In production mode
 
-When you execute a `make build` command, *Gulp* will compile your *LESS* files
+When you execute a `gulp` command, *Gulp* will compile your *LESS* files
 and it will optimize your *RequireJS* tree with your *Bower* dependencies and your own *JS* files into
 `/build` folder. As in *development* mode, *Twig* will automatically inject your assets to
 insert as many `<script>` and `<link>` tags as needed.
-
-### Make commands
-
-- `make`: is equivalent to `make configtest && make install && make build`
-- `make configtest`: test if *NPM*, *Bower* and *Gulp CLI* are available
-- `make install`: install *NPM* and *Bower* dependencies
-- `make build`: call `npm run build` in `` folder
-- `make watch`: call `npm run dev` in `` folder
-- `make clean`: remove any generated CSS and JS files (build and dist folders)
-- `make uninstall`: remove any *NPM* and *Bower* dependencies and `clean` 
