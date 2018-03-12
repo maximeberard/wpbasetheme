@@ -1,18 +1,18 @@
 <?php
-    function register_type() {
+    function register_[MyType]() {
       $labels = array(
-        'name' => 'Type',
-        'singular_name' => 'Type',
-        'add_new' => 'Ajouter un type',
-        'add_new_item' => 'Ajouter un nouveau type',
-        'edit_item' => 'Editer un type',
-        'new_item' => 'Nouveau Type',
-        'all_items' => 'Tous les type',
-        'view_item' => 'Voir le type',
-        'search_items' => 'Rechercher un type',
-        'not_found' =>  'Aucun Type',
-        'not_found_in_trash' => 'Aucun type dans la corbeille',
-        'menu_name' => 'Type'
+        'name' => '[MyType]',
+        'singular_name' => '[MyType]',
+        'add_new' => 'Ajouter un [MyType]',
+        'add_new_item' => 'Ajouter un nouveau [MyType]',
+        'edit_item' => 'Editer un [MyType]',
+        'new_item' => 'Nouveau [MyType]',
+        'all_items' => 'Tous les [MyType]',
+        'view_item' => 'Voir le [MyType]',
+        'search_items' => 'Rechercher un [MyType]',
+        'not_found' =>  'Aucun [MyType]',
+        'not_found_in_trash' => 'Aucun [MyType] dans la corbeille',
+        'menu_name' => '[MyType]'
       );
 
       $args = array(
@@ -23,16 +23,16 @@
         'show_in_menu' => true, 
         'query_var' => true,
         'rewrite' => true,
-        'capability_type' => 'post',
+        'capability_[MyType]' => 'post',
         'has_archive' => true, 
         'hierarchical' => false,
         'menu_position' => 4,
         'menu_icon' => 'dashicons-groups',
         'supports' => array('title','editor','thumbnail')
       ); 
-      register_post_type('type', $args);
+      register_post_type('[MyType]', $args);
     }
 
-    add_action( 'init', 'register_type' );
+    add_action( 'init', 'register_[MyType]' );
 
 ?>
