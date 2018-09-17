@@ -32,6 +32,7 @@ requirejs.config({
         "abstract-nav": "/wp-content/themes/wpbasetheme/bower_components/starting-blocks/dist/abstract-nav",
         "abstract-page": "/wp-content/themes/wpbasetheme/bower_components/starting-blocks/dist/abstract-page",
         "abstract-block": "/wp-content/themes/wpbasetheme/bower_components/starting-blocks/dist/abstract-block",
+        "cache-provider": "/wp-content/themes/wpbasetheme/bower_components/starting-blocks/dist/cache-provider",
         // If you want to use example Page and Home classes in your project
         // "pages/page": "/wp-content/themes/wpbasetheme/bower_components/starting-blocks/dist/pages/page",
         // "pages/home": "/wp-content/themes/wpbasetheme/bower_components/starting-blocks/dist/pages/home"

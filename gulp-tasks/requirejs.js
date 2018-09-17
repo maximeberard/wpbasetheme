@@ -47,6 +47,7 @@ gulp.task('requirejs', ['babel', 'clean-build'], function() {
             "abstract-nav": "./../bower_components/starting-blocks/dist/abstract-nav",
             "abstract-page": "./../bower_components/starting-blocks/dist/abstract-page",
             "abstract-block": "./../bower_components/starting-blocks/dist/abstract-block",
+            "cache-provider": "./../bower_components/starting-blocks/dist/cache-provider",
             // If you want to use example Page and Home classes in your project
             // "pages/page": "./../bower_components/starting-blocks/dist/pages/page",
             // "pages/home": "./../bower_components/starting-blocks/dist/pages/home"

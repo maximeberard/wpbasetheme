@@ -32,11 +32,10 @@ TweenLite.defaultEase = Expo.easeOut;
 //     'BaseTheme',
 //     '#fff',
 //     [
-//         { name:'Rezo Zero', website:'www.rezo-zero.com' }
+//         { name:'DEVELOPER', website:'www.developer.com' }
 //     ],
 //     [
-//         { name:'roadiz', website:'www.roadiz.io' },
-//         { name:'GSAP', website:'www.greensock.com' }
+//         { name: 'Starting Blocks', website: 'https://startingblocks.rezo-zero.com' },
 //     ],
 //     '#000'
 // );
