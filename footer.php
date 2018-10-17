@@ -9,7 +9,7 @@
  * @since Twenty Sixteen 1.0
  */
 ?>
-
+    <div id="ajax-container"></div>
 </div>
 
 <footer id="footer">
@@ -19,14 +19,51 @@
 
 <?php // wp_footer(); ?>
 
-    <?php $devMode = false; ?>
+    <?php $devMode = false; // true - false ?>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.js"></script>
     <script>
         var temp = {
             baseUrl : 'http://vagrantpress.dev',
             // baseUrl : 'http://www.url.com',
-            devMode : false
+            devMode : <?php echo $devMode; ?>
         };
+
+        // Cookie consent
+        window.addEventListener('load', function () {
+            window.cookieconsent.initialise({
+                container: document.getElementById("cookiesconsent"),
+                // location: true,
+                // revokable: false,
+                // law: {
+                //     regionalLaw: false,
+                // },
+                content: {
+                    message: "En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies à des fins de mesures d’audience.",
+                    dismiss: "Fermer",
+                    link: "En savoir plus",
+                    href: "<?php echo get_permalink($legalsId); ?>"
+                }
+            })
+        });
+
+        // Browser update — www.browser-update.org/customize.html
+        var $buoop = {
+            vs: { i:9, f: 15, o: 12.1, s: 5.1, c: 2 },
+            text:'Votre navigateur est périmé. Il contient des failles de sécurité et pourrait ne pas afficher certaines fonctionalités de ce site internet. <a href="http://browser-update.org/update-browser.html" target="_blank">Découvrez comment mettre votre navigateur à jour</a>'
+        };
+
+        function $buo_f(){
+            var e = document.createElement("script");
+            e.src = "https://browser-update.org/update.js";
+            document.body.appendChild(e);
+        }
+
+        try {
+            document.addEventListener("DOMContentLoaded", $buo_f,false)
+        } catch (e){
+            window.attachEvent("onload", $buo_f)
+        }
 
         // Analytics
         // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
