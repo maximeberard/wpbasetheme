@@ -9,46 +9,37 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
+<?php
+// Start the loop.
+while ( have_posts() ) : the_post();
+?>
 
-			// Include the single post content template.
-			get_template_part( 'template-parts/content', 'single' );
+<?php 
+    $pageID = get_the_ID();
+    $page = get_post($pageID);
+?>
+    <div class="page-container page-container-single" data-node-type="single" id="page-container-single-<?php echo $page->post_name; ?>" data-node-name="<?php echo $page->post_name; ?>" data-is-home="0" data-meta-title="<?php wp_title(); ?>">
+        
+        <div class="page-content single-content" id="<?php echo $page->post_name; ?>-content">
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
-			}
+        	<div class="container-fluid single-header-image">
+        		<?php the_post_thumbnail('large', array('class' => 'img-responsive single-header-img')); ?>
+        	</div>
+            
+            <div class="container">
+        		<h1 class="page-title single-title"><?php the_title(); ?></h1>
+			</div>
+			
+			<div class="container">
+                <div class="text single-content-text" id="<?php echo $page->post_name; ?>-content-text">
+                    <?php the_content(); //echo wpautop($page->post_content); // the_content(); // ?>
+                </div>
+            </div>
 
-			if ( is_singular( 'attachment' ) ) {
-				// Parent post navigation.
-				the_post_navigation( array(
-					'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'twentysixteen' ),
-				) );
-			} elseif ( is_singular( 'post' ) ) {
-				// Previous/next post navigation.
-				the_post_navigation( array(
-					'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentysixteen' ) . '</span> ' .
-						'<span class="screen-reader-text">' . __( 'Next post:', 'twentysixteen' ) . '</span> ' .
-						'<span class="post-title">%title</span>',
-					'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentysixteen' ) . '</span> ' .
-						'<span class="screen-reader-text">' . __( 'Previous post:', 'twentysixteen' ) . '</span> ' .
-						'<span class="post-title">%title</span>',
-				) );
-			}
+        </div>
 
-			// End of the loop.
-		endwhile;
-		?>
+    </div>
 
-	</main><!-- .site-main -->
+<?php endwhile; ?>
 
-	<?php get_sidebar( 'content-bottom' ); ?>
-
-</div><!-- .content-area -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
