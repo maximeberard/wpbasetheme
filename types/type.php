@@ -23,7 +23,7 @@
         'show_in_menu' => true, 
         'query_var' => true,
         'rewrite' => true,
-        'capability_[MyType]' => 'post',
+        'capability_type' => 'post',
         'has_archive' => true, 
         'hierarchical' => false,
         'menu_position' => 4,
