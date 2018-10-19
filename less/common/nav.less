@@ -7,6 +7,7 @@
  * Styles for nav
  */
 @navbar-height: 50px;
+@nav-height : 68px;
 
 // --- Navbar --- //
 #navbar{
@@ -68,12 +69,10 @@
     background: @white;
     z-index:50;
     transform:translateX(-100%);
-}
 
-@media (min-width: @screen-sm-min) {
-    #nav {
+    @media (min-width: @screen-sm-min) {
         right:0; bottom:initial;
-        width:auto; height:68px;
+        width:auto; height:@nav-height;
         transform:none;
         border-bottom: 1px solid #DADADA;
     }
@@ -85,15 +84,14 @@
     margin:0;
     padding:80px 15px 10px;
     width:100%;
-}
 
-@media (min-width: @screen-sm-min) {
-    #nav-list{
+    @media (min-width: @screen-sm-min) {
         float: left;
         width:auto;
         padding:0;
     }
 }
+
 
 .menu-item{
     position: relative;
@@ -101,6 +99,18 @@
 
     @media (min-width: @screen-sm-min) {
         display:inline-block; vertical-align: top;
+    }
+
+    &.current-menu-item a{
+        cursor:default;
+    }
+
+    &.current-menu-item a, a:hover, a:focus{
+        color: @black;
+
+        @media (min-width: @screen-sm-min) {
+            color: @red;
+        }
     }
 
     a{
@@ -135,10 +145,8 @@
     position: relative;
     float:left;
     margin:0; padding:0 15px;
-}
 
-@media (min-width: @screen-sm-min) {
-    #nav-lang{
+    @media (min-width: @screen-sm-min) {
         float: right;
     }
 }
