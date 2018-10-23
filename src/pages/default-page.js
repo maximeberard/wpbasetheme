@@ -1,8 +1,8 @@
 /**
- * Copyright REZO ZERO 2016
+ * Copyright Maxime Bérard 2016
  *
  * @file default-page.js
- * @copyright REZO ZERO 2016
+ * @copyright Maxime Bérard 2016
  * @author Maxime Bérard
  */
 

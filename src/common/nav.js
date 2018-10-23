@@ -1,9 +1,9 @@
 /**
- * Copyright REZO ZERO 2016
+ * Copyright Maxime Bérard 2016
  *
  * @file nav.js
- * @copyright REZO ZERO 2016
- * @author Ambroise Maupate
+ * @copyright Maxime Bérard 2016
+ * @author Maxime Bérard
  */
 import $ from 'jquery';
 import {Utils} from "utils/utils";

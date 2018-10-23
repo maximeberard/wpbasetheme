@@ -1,9 +1,9 @@
 /**
- * Copyright © 2016, Ambroise Maupate
+ * Copyright © 2016, Maxime Bérard
  *
  * @file home.js
- * @copyright REZO ZERO 2016
- * @author Ambroise Maupate
+ * @copyright Maxime Bérard 2016
+ * @author Maxime Bérard
  */
 
 import {AbstractPage} from "abstract-page";

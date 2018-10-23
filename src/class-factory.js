@@ -1,8 +1,8 @@
 /**
- * Copyright © 2016, Rezo Zero
+ * Copyright © 2016, Maxime Bérard
  *
  * @file class-factory.js
- * @author Ambroise Maupate
+ * @author Maxime Bérard
  */
 import log from "loglevel";
 import {Page} from "pages/page";
