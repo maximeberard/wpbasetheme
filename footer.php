@@ -13,8 +13,9 @@
 </div>
 
 <footer id="footer">
-    
 </footer>
+
+<div id="cookiesconsent"></div>
 
 
 <?php // wp_footer(); ?>

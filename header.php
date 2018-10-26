@@ -24,7 +24,15 @@
         $url = $wp->request;
         $pageTitle = get_the_title(get_the_ID());
         $title = get_bloginfo('name').' - '.get_bloginfo('description');
-        $postName = $post->post_name;
+
+        $postName = '';
+        $shareImage = get_template_directory_uri(). '/img/share-image.jpg';
+
+        if ($post) {
+            $postName = $post->post_name;
+            $postImage = get_the_post_thumbnail_url($post->ID, '1200x630');
+            if ($postImage) $shareImage = $postImage;
+        }
 
         // if(get_field('meta_title')){
         //     $title = get_field('meta_title');
@@ -54,19 +62,19 @@
     <meta property="og:site_name" content="WPBaseTheme" />
     <meta property="og:description" content="WPBaseTheme - SiteDescription" />
     <meta property="og:url" content="http://www.url.com" />
-    <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/share-image.jpg" />
+    <meta property="og:image" content="<?php echo $shareImage; ?>" />
     <meta property="og:type" content="website" />
     <!-- Google plus  -->
     <meta itemprop="name" content="WPBaseTheme - SiteDescription" />
     <meta itemprop="description" content="WPBaseTheme - SiteDescription" />
-    <meta itemprop="image" content="<?php echo get_template_directory_uri(); ?>/img/share-image.jpg" />
+    <meta itemprop="image" content="<?php echo $shareImage; ?>" />
     <!-- Twitter  -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="WPBaseTheme - SiteDescription" />
     <meta name="twitter:description" content="WPBaseTheme - SiteDescription" />
     <meta name="twitter:site" content="@twitteraccount" />
     <meta name="twitter:url" content="http://www.url.com" />
-    <meta name="twitter:image" content="<?php echo get_template_directory_uri(); ?>/img/share-image.jpg" />
+    <meta name="twitter:image" content="<?php echo $shareImage; ?>" />
 
     <!--
      # Gulp injected styles

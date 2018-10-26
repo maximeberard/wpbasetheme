@@ -35,6 +35,7 @@
 
 // NEW IMAGES SIZE
 add_theme_support('post-thumbnails');
+add_image_size('1200x630', 1200, 630, true); // 1200x630 (social share image)
 // add_image_size('360x360', 360, 360, true); // Custom thumbnail
 
 
