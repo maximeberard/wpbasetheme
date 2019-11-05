@@ -8,6 +8,7 @@ import log from "loglevel";
 import {Page} from "pages/page";
 import {Home} from "pages/home";
 import {AbstractBlock} from "abstract-block";
+import {InviewBlock} from "blocks/in-view-block";
 // import {ContactBlock} from "blocks/contact-block";
 
 /**
@@ -49,6 +50,8 @@ export class ClassFactory
      */
     getBlockInstance(nodeTypeName, page, $cont) {
         switch(nodeTypeName){
+            case 'in-view-block':
+                return new InviewBlock(page, $cont, nodeTypeName);
             /*case 'contact-block':
                 return new ContactBlock(page, $cont, nodeTypeName);*/
             default:

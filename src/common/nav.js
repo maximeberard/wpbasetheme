@@ -25,7 +25,11 @@ export class Nav extends AbstractNav {
         this.$links = this.$cont.find('a').not('[target="_blank"]');
 
         this.$btn = $('#nav-btn');
-        this.$overlay = $('#nav-overlay');
+        this.hasOverlay = false; 
+        if (this.hasOverlay) this.$overlay = $('#nav-overlay');
+        
+        this.$barBg = $('#navbar-bg');
+        this.$btnBar = this.$bar.find('.nav-btn-bar');
 
         this.minifyLimit = BootstrapMedia.isMinMD() ? 165 : 50;
 
@@ -40,7 +44,7 @@ export class Nav extends AbstractNav {
         }
 
         this.$btn.on('click', this.btnClick.bind(this));
-        this.$overlay.on('click', this.close.bind(this));
+        if (this.hasOverlay) this.$overlay.on('click', this.close.bind(this));
 
         window.addEventListener('scroll', this.onScroll.bind(this));
         window.addEventListener('resize', debounce(this.onResize.bind(this), 100, false));
@@ -55,7 +59,7 @@ export class Nav extends AbstractNav {
         }
 
         this.$btn.off('click', this.btnClick.bind(this));
-        this.$overlay.off('click', this.close.bind(this));
+        if (this.hasOverlay) this.$overlay.off('click', this.close.bind(this));
 
         window.removeEventListener('scroll', this.onScroll.bind(this));
         window.removeEventListener('resize', debounce(this.onResize.bind(this), 100, false));
@@ -103,8 +107,18 @@ export class Nav extends AbstractNav {
             this.$cont[0].style.display = 'block';
             TweenLite.fromTo(this.$cont, 0.4, {xPercent:-100}, {xPercent:0});
 
-            this.$overlay[0].style.display = 'block';
-            TweenLite.to(this.$overlay, 1.2, {opacity:1});
+            if (this.hasOverlay) {
+                this.$overlay[0].style.display = 'block';
+                TweenLite.to(this.$overlay, 1.2, {opacity:1});
+            }
+
+            // Btn
+            TweenLite.to(this.$btnBar[0], 0.3, {y:7});
+            TweenLite.to(this.$btnBar[2], 0.3, {y:-7});
+            TweenLite.to(this.$btnBar[1], 0.3, {opacity:0});
+
+            TweenLite.to(this.$btnBar[0], 0.4, {rotation:45, delay:0.2});
+            TweenLite.to(this.$btnBar[2], 0.4, {rotation:-45, delay:0.2});
 
             this.opened = true;
         }
@@ -118,9 +132,19 @@ export class Nav extends AbstractNav {
                // document.body.removeAttribute('style');
             }});
 
-            TweenLite.to(this.$overlay, 1.2, {opacity:0, onComplete: () => {
-                this.$overlay[0].style.display = 'none';
-            }});
+            if (this.hasOverlay) {
+                TweenLite.to(this.$overlay, 1.2, {opacity:0, onComplete: () => {
+                    this.$overlay[0].style.display = 'none';
+                }});
+            }
+
+            // Btn
+            TweenLite.to(this.$btnBar[0], 0.4, {rotation:0});
+            TweenLite.to(this.$btnBar[2], 0.4, {rotation:0});
+
+            TweenLite.to(this.$btnBar[0], 0.3, {y:0, delay:0.2});
+            TweenLite.to(this.$btnBar[2], 0.3, {y:0, delay:0.2});
+            TweenLite.to(this.$btnBar[1], 0.3, {opacity:1, delay:0.2});
 
             this.opened = false;
         }
