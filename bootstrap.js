@@ -17,6 +17,8 @@ requirejs.config({
         actual: "/wp-content/themes/wpbasetheme/bower_components/jquery.actual/jquery.actual.min",
         Hammer: "/wp-content/themes/wpbasetheme/bower_components/hammerjs/hammer.min",
         loglevel: "/wp-content/themes/wpbasetheme/bower_components/loglevel/dist/loglevel.min",
+        waypoint: "/wp-content/themes/wpbasetheme/bower_components/waypoints/lib/noframework.waypoints",
+        masonry: "/wp-content/themes/wpbasetheme/bower_components/masonry-layout/dist/masonry.pkgd",
         // Utils functions and classes
         "utils/utils": "/wp-content/themes/wpbasetheme/bower_components/starting-blocks/dist/utils/utils",
         "utils/polyfills": "/wp-content/themes/wpbasetheme/bower_components/starting-blocks/dist/utils/polyfills",

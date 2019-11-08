@@ -32,6 +32,8 @@ gulp.task('requirejs', ['babel', 'clean-build'], function() {
             actual: "./../bower_components/jquery.actual/jquery.actual.min",
             Hammer: "./../bower_components/hammerjs/hammer.min",
             loglevel: "./../bower_components/loglevel/dist/loglevel.min",
+            waypoint: "./../bower_components/waypoints/lib/noframework.waypoints",
+            masonry: "./../bower_components/masonry-layout/dist/masonry.pkgd",
             // Utils functions and classes
             "utils/utils": "./../bower_components/starting-blocks/dist/utils/utils",
             "utils/gaTrackErrors": "./../bower_components/starting-blocks/dist/utils/gaTrackErrors",
