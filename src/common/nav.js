@@ -28,8 +28,9 @@ export class Nav extends AbstractNav {
         this.hasOverlay = false; 
         if (this.hasOverlay) this.$overlay = $('#nav-overlay');
         
-        this.$barBg = $('#navbar-bg');
+        this.$bar = $('#navbar');
         this.$btnBar = this.$bar.find('.nav-btn-bar');
+        // this.$barBg = $('#navbar-bg');
 
         this.minifyLimit = BootstrapMedia.isMinMD() ? 165 : 50;
 

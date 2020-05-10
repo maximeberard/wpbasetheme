@@ -20,14 +20,12 @@
 
 <?php // wp_footer(); ?>
 
-    <?php $devMode = false; // true - false ?>
+    <?php $devMode = (get_site_url() == 'http://localhost:8888/website'); // true - false ?>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.js"></script>
     <script>
         var temp = {
-            baseUrl : 'http://vagrantpress.dev',
-            // baseUrl : 'http://www.url.com',
-            devMode : <?php echo $devMode; ?>
+            baseUrl : '<?php echo get_site_url(); ?>'
         };
 
         // Cookie consent
