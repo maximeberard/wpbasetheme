@@ -114,8 +114,8 @@ export class Nav extends AbstractNav {
             }
 
             // Btn
-            TweenLite.to(this.$btnBar[0], 0.3, {y:7});
-            TweenLite.to(this.$btnBar[2], 0.3, {y:-7});
+            TweenLite.to(this.$btnBar[0], 0.3, {y:9});
+            TweenLite.to(this.$btnBar[2], 0.3, {y:-9});
             TweenLite.to(this.$btnBar[1], 0.3, {opacity:0});
 
             TweenLite.to(this.$btnBar[0], 0.4, {rotation:45, delay:0.2});

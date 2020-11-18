@@ -8,6 +8,7 @@ import {gaTrackErrors} from "utils/gaTrackErrors";
 import {Nav} from "common/nav";
 import {Router} from "router";
 import {GraphicLoader} from "graphicLoader";
+import {Loader} from "common/loader";
 import {ClassFactory} from "class-factory";
 
 /**
@@ -83,9 +84,9 @@ const router = new Router(
         pageClass: 'page-container'
     },
     new ClassFactory(),
-    // temp namespace is defined in your Resources/views/base.twig.html
+    // temp namespace is defined in your footer.php file
     temp.baseUrl,
-    new GraphicLoader(),
+    new GraphicLoader(), // Loader()
     new Nav()
 );
 router.initEvents();
